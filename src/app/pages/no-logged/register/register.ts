@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Header } from '../../../components/not-logged/header/header';
-import { SingIn } from '../../../components/not-logged/sing-in/sing-in';
+import { SingIn } from "../../../components/not-logged/sing-in/sing-in";
 
 @Component({
   selector: 'app-register',

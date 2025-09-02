@@ -1,0 +1,60 @@
+.login-wrapper {
+    min-height: 100vh;
+    padding: 48px 16px;
+    position: relative;
+}
+
+.login-card {
+    width: 400px;
+    max-width: 520px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+.login-card h1 {
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+.login-card .form-control {
+    background-color: #2b2b2b;
+    border: 1px solid #2b2b2b;
+    color: #ffffff;
+    border-radius: 6px;
+}
+
+.login-card .form-control-lg {
+    font-size: 1rem;
+    border-radius: 6px;
+}
+
+.login-card .form-control::placeholder {
+    color: #a0a0a0;
+}
+
+.login-card .form-control:focus {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border-color: #555;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.15);
+}
+
+.forgot-link {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}
+
+.signup-link {
+    color: #e50914;
+    font-size: 0.95rem;
+}
+
+.login-card .btn-lg {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+}
+
