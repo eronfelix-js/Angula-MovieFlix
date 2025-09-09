@@ -1,0 +1,70 @@
+.movie-card {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 18px 18px 12px 18px;
+    color: #e6e6e6;
+    position: relative;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    width: 100%;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-card .badge {
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    background-color: #e50914;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 4px 6px;
+    border-radius: 2px;
+}
+
+.movie-card .title {
+    font-size: 1.25rem;
+    margin: 0 0 8px 0;
+}
+
+.movie-card .desc {
+    font-size: 0.9rem;
+    color: #b8b8b8;
+    margin-bottom: 12px;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.movie-card .meta {
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    margin: 0 0 10px 0;
+    padding: 0;
+    color: #9ea0a3;
+    font-size: 0.8rem;
+}
+
+.movie-card .provider {
+    display: inline-block;
+    background-color: #2a2a2a;
+    color: #d9d9d9;
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-top: auto;
+    align-self: center;
+    width: fit-content;
+}
+
+.approval-high {
+    color: #4ade80 !important;
+}
+
+.approval-low {
+    color: #f87171 !important;
+}
+

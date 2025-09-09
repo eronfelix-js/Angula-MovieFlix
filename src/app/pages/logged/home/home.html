@@ -1,2 +1,26 @@
 <app-header></app-header>
-<app-card></app-card>
+
+<main class="container-xxl page-container">
+    <div class="action-buttons">
+        <button class="btn-create-movie" [routerLink]="['/criar-filme']" routerLinkActive="active">
+            Criar Filme
+        </button>
+    </div>
+    
+    <section class="cards-grid">
+        <app-card
+         title="O Poderoso Chefão"
+         description="Don Corleone, chefe da máfia, precisa passar o legado para seu filho Michael, que reluta em assumir os negócios da família."
+        provider="Claro tv"
+        [top10]="true"
+        >
+        </app-card>
+        <app-card title="Casablanca" description="Durante a Segunda Guerra Mundial, um exilado americano precisa escolher entre o amor da sua vida e ajudar um líder da resistência." provider="NETFLIX"></app-card>
+        <app-card title="Cidadão Kane" description="A história do magnata da imprensa Charles Foster Kane e a busca por desvendar seu último segredo." provider="Claro tv"></app-card>
+        <app-card title="Oppenheimer" description="A história do cientista que liderou a criação da bomba atômica e mudou o curso da humanidade." provider="tv+"></app-card>
+        <app-card title="Coringa 2" description="Continuação da história de Arthur Fleck e sua transformação completa no vilão Coringa." provider="primevideo"></app-card>
+        <app-card title="Duna: Parte 2" description="Paul Atreides lidera uma rebelião contra o Imperador enquanto busca vingança e equilíbrio para o destino do universo." provider="tv+"></app-card>
+        <app-card title="The Batman" description="Bruce Wayne enfrenta crimes misteriosos cometidos pelo Charada enquanto descobre segredos sombrios sobre Gotham." provider="primevideo"></app-card>
+        <app-card title="Divertida Mente 2" description="Riley enfrenta novos desafios da adolescência enquanto emoções inéditas aparecem e bagunçam sua mente." provider="NETFLIX"></app-card>
+    </section>
+</main>

@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { Header } from "../../../components/not-logged/header/header";
+import { RouterLink } from '@angular/router';
+import { Header } from "../../../components/logged/header/header";
 import { Card } from "../../../components/logged/card/card";
 
 @Component({
   selector: 'app-home',
-  imports: [Header, Card],
+  standalone: true,
+  imports: [RouterLink, Header, Card],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })

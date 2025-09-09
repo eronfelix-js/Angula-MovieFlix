@@ -1,0 +1,17 @@
+<div class="create-movie-page">
+    <div class="back-button">
+        <button class="btn-back" [routerLink]="['/']" routerLinkActive="active">
+            <span>←</span>
+            Voltar
+        </button>
+    </div>
+    
+    <div class="logo-container">
+        <img src="/images/666b757a8404b2a0b6bf5b72a80360d1262198b2.png" alt="logo">
+    </div>
+    
+    <div class="form-container">
+        <app-create-movie-modal></app-create-movie-modal>
+    </div>
+</div>
+<router-outlet></router-outlet>

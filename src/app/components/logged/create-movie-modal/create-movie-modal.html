@@ -1,1 +1,107 @@
-<p>create-movie-modal works!</p>
+<div class="modal-overlay">
+    <div class="modal-content">
+        <h2 class="modal-title">Cadastre seu filme aqui</h2>
+        
+        <form class="movie-form" (ngSubmit)="onSubmit()" #movieForm="ngForm">
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="input-group">
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="Nome do filme"
+                            [(ngModel)]="movieData.name"
+                            name="name"
+                            required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input 
+                            type="date" 
+                            class="form-control" 
+                            placeholder="Data de lançamento"
+                            [(ngModel)]="movieData.releaseDate"
+                            name="releaseDate">
+                        <span class="input-icon">📅</span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <select 
+                            class="form-control"
+                            [(ngModel)]="movieData.provider"
+                            name="provider">
+                            <option value="" disabled selected>Aonde está disponível?</option>
+                            <option value="netflix">Netflix</option>
+                            <option value="prime">Prime Video</option>
+                            <option value="claro">Claro TV</option>
+                            <option value="tvplus">TV+</option>
+                        </select>
+                        <span class="input-icon">🔽</span>
+                    </div>
+                </div>
+                
+                <div class="form-column">
+                    <div class="input-group">
+                        <input 
+                            class="form-control" 
+                            placeholder="Descrição do filme" 
+                            rows="3"
+                            [(ngModel)]="movieData.description"
+                            name="description"
+                            required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input 
+                            type="number" 
+                            class="form-control" 
+                            placeholder="Avaliação geral" 
+                            min="0" 
+                            max="100"
+                            [(ngModel)]="movieData.rating"
+                            name="rating">
+                        <span class="input-icon">⭐</span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <select 
+                            class="form-control"
+                            [(ngModel)]="movieData.category"
+                            name="category">
+                            <option value="" disabled selected>Qual categoria</option>
+                            <option value="acao">Ação</option>
+                            <option value="drama">Drama</option>
+                            <option value="comedia">Comédia</option>
+                            <option value="terror">Terror</option>
+                            <option value="ficcao">Ficção Científica</option>
+                        </select>
+                        <span class="input-icon">🔽</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div *ngIf="errorMessage" class="alert alert-danger mb-3">
+                {{ errorMessage }}
+            </div>
+
+            <div *ngIf="successMessage" class="alert alert-success mb-3">
+                {{ successMessage }}
+            </div>
+
+            <div class="form-actions">
+                <button 
+                    type="submit" 
+                    class="btn-submit"
+                    [disabled]="isLoading || !movieForm.form.valid">
+                    <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2"></span>
+                    {{ isLoading ? 'Cadastrando...' : 'Cadastrar filme' }}
+                </button>
+            </div>
+
+            <!-- Debug info em desenvolvimento -->
+            <div *ngIf="!environment.isProduction" class="text-center mt-3">
+                <small class="text-muted">Ambiente: {{ getEnvironmentInfo() }}</small>
+            </div>
+        </form>
+    </div>
+</div>

@@ -2,17 +2,40 @@
     <div class="login-card">
         <h1 class="mb-4 text-white fw-bold">Entre na sua conta</h1>
 
-        <form novalidate>
+        <form (ngSubmit)="onSubmit(); $event.preventDefault()" #loginForm="ngForm" novalidate>
             <div class="mb-3">
-                <input type="text" class="form-control form-control-lg" placeholder="E-mail ou número de telefone">
+                <input 
+                    type="email" 
+                    class="form-control form-control-lg" 
+                    placeholder="E-mail ou número de telefone"
+                    [(ngModel)]="loginData.email"
+                    name="email"
+                    required
+                    email>
             </div>
 
             <div class="mb-3">
-                <input type="password" class="form-control form-control-lg" placeholder="Sua senha">
+                <input 
+                    type="password" 
+                    class="form-control form-control-lg" 
+                    placeholder="Sua senha"
+                    [(ngModel)]="loginData.password"
+                    name="password"
+                    required>
+            </div>
+
+            <div *ngIf="errorMessage" class="alert alert-danger mb-3">
+                {{ errorMessage }}
             </div>
 
             <div class="d-grid gap-2 mb-2">
-                <button type="submit" class="btn btn-danger btn-lg">Entrar na conta</button>
+                <button 
+                    type="submit" 
+                    class="btn btn-danger btn-lg"
+                    [disabled]="isLoading || !loginForm.form.valid">
+                    <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2"></span>
+                    {{ isLoading ? 'Entrando...' : 'Entrar na conta' }}
+                </button>
             </div>
 
             <div class="text-center mb-4">
@@ -20,7 +43,12 @@
             </div>
 
             <div class="text-center text-secondary">
-                Novo por aqui? <a href="/registrar" class="signup-link fw-semibold text-decoration-none">Assine agora</a>
+                Novo por aqui? <a [routerLink]="['/registrar']" routerLinkActive="active" class="signup-link fw-semibold text-decoration-none">Assine agora</a>
+            </div>
+
+            <!-- Debug info em desenvolvimento -->
+            <div *ngIf="!environment.isProduction" class="text-center mt-3">
+                <small class="text-muted">Ambiente: {{ getEnvironmentInfo() }}</small>
             </div>
         </form>
     </div>

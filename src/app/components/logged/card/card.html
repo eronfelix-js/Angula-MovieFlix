@@ -1,1 +1,11 @@
-<p>card works!</p>
+<article class="movie-card">
+    <div class="badge" *ngIf="top10">TOP 10</div>
+    <h3 class="title">{{ title }}</h3>
+    <p class="desc">{{ description }}</p>
+    <ul class="meta">
+        <li>⏰{{ duration }}</li>
+        <li>🔞Somente +18</li>
+        <li [class]="approval >= 70 ? 'approval-high' : 'approval-low'">🏆{{ approval }}% Aprovação</li>
+    </ul>
+    <div class="provider">{{ provider }}</div>
+ </article>
